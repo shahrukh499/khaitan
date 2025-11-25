@@ -18,7 +18,7 @@ function ProductsCard() {
             </Link>
         </div>
         <div className='mb-3'>
-            <Link href='#' className='text-[14px] font-semibold hover:text-blue-500 line-clamp-2'>Nova A12 Factory Unlocked 4G/LTE Smartphone</Link>
+            <Link href='#' className='text-[14px] font-semibold hover:text-[#FF3333] line-clamp-2'>Nova A12 Factory Unlocked 4G/LTE Smartphone</Link>
         </div>
         <div className='flex items-center mb-2'>
             <Rating name="size-small" defaultValue={2} size="small" readOnly />

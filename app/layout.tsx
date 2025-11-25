@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Bai_Jamjuree } from "next/font/google";
 import "./globals.css";
 import '@splidejs/react-splide/css';
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 const baiJamjuree = Bai_Jamjuree({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
       >
         <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

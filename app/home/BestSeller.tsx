@@ -1,6 +1,5 @@
 import { Button } from "@mui/material";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import Image from "next/image";
 import React from "react";
 import ProductsCard from "../components/ProductsCard";
 
@@ -22,7 +21,7 @@ function BestSeller() {
                 nesciunt fugiat.
               </p>
               <div>
-                <Button variant="contained" color="primary">
+                <Button variant="contained" color="primary" sx={{backgroundColor:'#FF3333'}}>
                   Shop Now
                 </Button>
               </div>

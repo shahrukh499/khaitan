@@ -12,6 +12,10 @@ import Link from "next/link";
 import React from "react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
+import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import Navitem from './Navitem';
 
 const StyledBadge = styled(Badge)<BadgeProps>(
   ({ theme }: { theme: Theme }) => ({
@@ -20,13 +24,23 @@ const StyledBadge = styled(Badge)<BadgeProps>(
       top: 13,
       border: `2px solid ${(theme.vars ?? theme).palette.background.paper}`,
       padding: "0 4px",
+      backgroundColor: '#FF3333',
+      color: '#ffffff',
+      fontSize: '12px',
+      fontWeight: 'bold',
+      borderRadius: '50%',
+      width: '20px',
+      height: '20px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
   })
 );
 
 function Header() {
   return (
-    <header className="bg-gradient-to-r from-[#300a81] via-[#0f3b79] to-[#412283]">
+    <header className="bg-linear-to-r from-[#300a81] via-[#0f3b79] to-[#412283]">
       <div className="container mx-auto px-4">
         <div className="py-8">
           <div className="flex items-center">
@@ -56,7 +70,7 @@ function Header() {
                   width="508.000000pt"
                   height="512.000000pt"
                   viewBox="0 0 508.000000 512.000000"
-                  fill="#05df72"
+                  fill="#FF3333"
                 >
                   <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
                     <path
@@ -109,7 +123,7 @@ function Header() {
                 <div>
                   <p className="font-semibold text-[13px] text-white">
                     Hotline:{" "}
-                    <Link href="#" className="text-green-400">
+                    <Link href="#" className="text-[#FF3333]">
                       +32526556445
                     </Link>
                   </p>
@@ -121,15 +135,33 @@ function Header() {
               <div className="flex items-center gap-x-2">
                 <IconButton aria-label="cart">
                   <StyledBadge badgeContent={4} color="secondary">
-                    <FavoriteBorderIcon sx={{color:'white'}} />
+                    <FavoriteBorderIcon sx={{color:'#FFFFFF'}} />
                   </StyledBadge>
                 </IconButton>
                 <IconButton aria-label="cart">
                   <StyledBadge badgeContent={4} color="secondary">
-                    <ShoppingCartOutlinedIcon sx={{color:'white'}} />
+                    <ShoppingCartOutlinedIcon sx={{color:'#FFFFFF'}} />
                   </StyledBadge>
                 </IconButton>
+                <IconButton aria-label="cart">
+                    <PermIdentityOutlinedIcon sx={{color:'#FFFFFF'}} />
+                </IconButton>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white px-4 rounded-t-lg shadow-lg flex items-center justify-between">
+          <div>
+            <Navitem />
+          </div>
+          <div className="flex items-center gap-x-2">
+            <div className="flex items-center gap-x-1">
+              <LocalShippingOutlinedIcon sx={{color:'#FF3333'}} />
+              <Link href='#' className="text-[14px] font-semibold">Track Your Order</Link>
+            </div>
+            <div className="flex items-center gap-x-1">
+              <LocationOnOutlinedIcon sx={{color:'#FF3333'}} />
+              <Link href='#' className="text-[14px] font-semibold">Store Locator</Link>
             </div>
           </div>
         </div>

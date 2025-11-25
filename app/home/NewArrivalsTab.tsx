@@ -40,6 +40,7 @@ export default function NewArrivalsTab() {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+  
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -48,10 +49,30 @@ export default function NewArrivalsTab() {
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
+          sx={{
+            "& .MuiTabs-indicator": {
+              backgroundColor: "#FF3333",
+            },
+            "& .MuiTab-root.Mui-selected": {
+              color: "#FF3333",
+            },
+          }}
         >
-          <Tab label="SmartPhone" {...a11yProps(0)} sx={{textTransform:'capitalize'}} />
-          <Tab label="Smart Watch" {...a11yProps(1)} sx={{textTransform:'capitalize'}} />
-          <Tab label="Audio" {...a11yProps(2)} sx={{textTransform:'capitalize'}} />
+          <Tab
+            label="Living Room"
+            {...a11yProps(0)}
+            sx={{ textTransform: "capitalize" }}
+          />
+          <Tab
+            label="Bathroom"
+            {...a11yProps(1)}
+            sx={{ textTransform: "capitalize" }}
+          />
+          <Tab
+            label="Kitchen"
+            {...a11yProps(2)}
+            sx={{ textTransform: "capitalize" }}
+          />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
@@ -76,7 +97,7 @@ export default function NewArrivalsTab() {
                   <div className="max-w-[270px] w-full">
                     <Link
                       href="#"
-                      className="text-[14px] font-semibold hover:text-blue-500"
+                      className="text-[14px] font-semibold hover:text-[#FF3333]"
                     >
                       Nova A12 Factory Unlocked 4G/LTE Smartphone
                     </Link>
@@ -112,7 +133,7 @@ export default function NewArrivalsTab() {
                   <div className="max-w-[270px] w-full">
                     <Link
                       href="#"
-                      className="text-[14px] font-semibold hover:text-blue-500"
+                      className="text-[14px] font-semibold hover:text-[#FF3333]"
                     >
                       Nova A12 Factory Unlocked 4G/LTE Smartphone
                     </Link>
@@ -148,7 +169,7 @@ export default function NewArrivalsTab() {
                   <div className="max-w-[270px] w-full">
                     <Link
                       href="#"
-                      className="text-[14px] font-semibold hover:text-blue-500"
+                      className="text-[14px] font-semibold hover:text-[#FF3333]"
                     >
                       Nova A12 Factory Unlocked 4G/LTE Smartphone
                     </Link>

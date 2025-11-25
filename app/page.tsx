@@ -10,6 +10,7 @@ import NewArrivalsProducts from './home/NewArrivalsProducts';
 import Banner from './home/Banner';
 import BestSeller from './home/BestSeller';
 import TwinBrandos from './home/TwinBrandos';
+import HotspotsProducts from './home/HotspotsProducts';
 
 export default function Home() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -20,6 +21,7 @@ export default function Home() {
       <ShowcaseArea />
       <TrustSection />
       <BestSeller />
+      <HotspotsProducts />
       <Brandos />
       <FullSizeSection/>
       <NewArrivalsProducts />
