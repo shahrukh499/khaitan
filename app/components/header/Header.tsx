@@ -3,6 +3,8 @@ import {
   Badge,
   BadgeProps,
   IconButton,
+  InputBase,
+  Paper,
   styled,
   TextField,
   Theme,
@@ -12,10 +14,11 @@ import Link from "next/link";
 import React from "react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
-import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import Navitem from './Navitem';
+import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import SearchIcon from "@mui/icons-material/Search";
+import Navitem from "./Navitem";
 
 const StyledBadge = styled(Badge)<BadgeProps>(
   ({ theme }: { theme: Theme }) => ({
@@ -24,16 +27,16 @@ const StyledBadge = styled(Badge)<BadgeProps>(
       top: 13,
       border: `2px solid ${(theme.vars ?? theme).palette.background.paper}`,
       padding: "0 4px",
-      backgroundColor: '#FF3333',
-      color: '#ffffff',
-      fontSize: '12px',
-      fontWeight: 'bold',
-      borderRadius: '50%',
-      width: '20px',
-      height: '20px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
+      backgroundColor: "#FF3333",
+      color: "#ffffff",
+      fontSize: "12px",
+      fontWeight: "bold",
+      borderRadius: "50%",
+      width: "20px",
+      height: "20px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
     },
   })
 );
@@ -53,15 +56,29 @@ function Header() {
               />
             </div>
             <div className="basis-4/5 flex w-full items-center justify-end gap-x-10">
-              <div className="grow max-w-[500px]">
-                <TextField
-                  id="outlined-basic"
-                  label="Outlined"
-                  variant="outlined"
-                  size="small"
-                  fullWidth
-                  sx={{backgroundColor:'#ffffff', borderRadius:'5px'}}
-                />
+              <div className="grow max-w-[400px]">
+                <Paper
+                  component="form"
+                  sx={{
+                    p: "2px 4px",
+                    display: "flex",
+                    alignItems: "center",
+                    width: 400,
+                  }}
+                >
+                  <InputBase
+                    sx={{ ml: 1, flex: 1 }}
+                    placeholder="Search"
+                    inputProps={{ "aria-label": "search" }}
+                  />
+                  <IconButton
+                    type="button"
+                    sx={{ p: "10px" }}
+                    aria-label="search"
+                  >
+                    <SearchIcon />
+                  </IconButton>
+                </Paper>
               </div>
               <div className="flex items-center gap-x-2">
                 <svg
@@ -135,16 +152,16 @@ function Header() {
               <div className="flex items-center gap-x-2">
                 <IconButton aria-label="cart">
                   <StyledBadge badgeContent={4} color="secondary">
-                    <FavoriteBorderIcon sx={{color:'#FFFFFF'}} />
+                    <FavoriteBorderIcon sx={{ color: "#FFFFFF" }} />
                   </StyledBadge>
                 </IconButton>
                 <IconButton aria-label="cart">
                   <StyledBadge badgeContent={4} color="secondary">
-                    <ShoppingCartOutlinedIcon sx={{color:'#FFFFFF'}} />
+                    <ShoppingCartOutlinedIcon sx={{ color: "#FFFFFF" }} />
                   </StyledBadge>
                 </IconButton>
                 <IconButton aria-label="cart">
-                    <PermIdentityOutlinedIcon sx={{color:'#FFFFFF'}} />
+                  <PermIdentityOutlinedIcon sx={{ color: "#FFFFFF" }} />
                 </IconButton>
               </div>
             </div>
@@ -156,12 +173,16 @@ function Header() {
           </div>
           <div className="flex items-center gap-x-2">
             <div className="flex items-center gap-x-1">
-              <LocalShippingOutlinedIcon sx={{color:'#FF3333'}} />
-              <Link href='#' className="text-[14px] font-semibold">Track Your Order</Link>
+              <LocalShippingOutlinedIcon sx={{ color: "#FF3333" }} />
+              <Link href="#" className="text-[14px] font-semibold">
+                Track Your Order
+              </Link>
             </div>
             <div className="flex items-center gap-x-1">
-              <LocationOnOutlinedIcon sx={{color:'#FF3333'}} />
-              <Link href='#' className="text-[14px] font-semibold">Store Locator</Link>
+              <LocationOnOutlinedIcon sx={{ color: "#FF3333" }} />
+              <Link href="#" className="text-[14px] font-semibold">
+                Store Locator
+              </Link>
             </div>
           </div>
         </div>

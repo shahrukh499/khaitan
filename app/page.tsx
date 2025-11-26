@@ -11,6 +11,8 @@ import Banner from './home/Banner';
 import BestSeller from './home/BestSeller';
 import TwinBrandos from './home/TwinBrandos';
 import HotspotsProducts from './home/HotspotsProducts';
+import CollageSection from './home/CollageSection';
+import DrivingKhaitan from './home/DrivingKhaitan';
 
 export default function Home() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -22,10 +24,12 @@ export default function Home() {
       <TrustSection />
       <BestSeller />
       <HotspotsProducts />
+      <CollageSection/>
       <Brandos />
       <FullSizeSection/>
       <NewArrivalsProducts />
       <TwinBrandos />
+      <DrivingKhaitan/>
     </>
   );
 }

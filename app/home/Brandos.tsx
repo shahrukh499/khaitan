@@ -6,7 +6,7 @@ function Brandos() {
   return (
     <section className='py-6'>
         <div className='container mx-auto px-4'>
-            <div className='flex flex-wrap'>
+            <div className='flex flex-wrap gap-y-3'>
                <div className='w-full md:w-[50%] lg:w-[33.33%] px-1.5'>
                     <div className='relative'>
                         <div className='overflow-hidden'>
