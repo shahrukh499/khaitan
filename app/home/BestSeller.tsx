@@ -2,8 +2,10 @@ import { Button } from "@mui/material";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import React from "react";
 import ProductsCard from "../components/ProductsCard";
+import { productsData } from "../data/productsData";
 
 function BestSeller() {
+  const products = productsData;
   return (
     <section className="py-6">
       <div className="container mx-auto px-4">
@@ -50,9 +52,21 @@ function BestSeller() {
               }}
               aria-label="My Favorite Images"
             >
-                <SplideSlide>
-                   <ProductsCard/>
-                </SplideSlide>
+              {
+                products.map((product) => (
+                  <SplideSlide key={product.id}>
+                    <ProductsCard
+                      id={product.id}
+                      title={product.name}
+                      price={product.price}
+                      image={product.image}
+                      link={product.link}
+                      rating={product.rating}
+                      reviews={product.reviews}
+                    />
+                  </SplideSlide>
+                ))
+              }
             </Splide>
           </div>
         </div>
