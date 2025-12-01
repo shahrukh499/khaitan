@@ -1,5 +1,6 @@
 import React from 'react'
 import Showcards from './Showcards'
+import { showcaseData } from '../data/showcaseData'
 
 function ShowcaseArea() {
   return (
@@ -7,9 +8,9 @@ function ShowcaseArea() {
         <div className='container mx-auto px-4'>
             <div className='flex flex-wrap'>
                 {
-                    Array.from({ length: 6 }).map((_, index) => (
-                        <div className='w-full md:w-[50%] lg:w-[16.66%]' key={index}>
-                            <Showcards />
+                    showcaseData.map((item) => (
+                        <div className='w-full md:w-[50%] lg:w-[16.66%]' key={item.id}>
+                            <Showcards key={item.id} {...item} />
                         </div>
                     ))
                 }

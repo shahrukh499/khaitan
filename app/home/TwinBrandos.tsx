@@ -10,7 +10,7 @@ function TwinBrandos() {
                 <div className='w-full lg:w-[50%] px-1.5'>
                     <div className='relative'>
                         <div>
-                            <Image className='rounded-lg' src='/assets/img/banner2-04.webp' alt='hero' height={760} width={1400} />
+                            <Image className='rounded-2xl' src='/assets/img/banner2-04.webp' alt='hero' height={760} width={1400} />
                         </div>
                         <div className='absolute top-1/2 left-0 translate-y-[-50%] ps-12'>
                             <span className='text-[14px] text-blue-400'>New Arrivals</span>
@@ -24,7 +24,7 @@ function TwinBrandos() {
                 <div className='w-full lg:w-[50%] px-1.5'>
                     <div className='relative'>
                         <div>
-                            <Image className='rounded-lg' src='/assets/img/banner2-05.webp' alt='hero' height={760} width={1400} />
+                            <Image className='rounded-2xl' src='/assets/img/banner2-05.webp' alt='hero' height={760} width={1400} />
                         </div>
                         <div className='absolute top-1/2 left-0 translate-y-[-50%] ps-12'>
                             <span className='text-[14px] text-blue-400'>New Arrivals</span>

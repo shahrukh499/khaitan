@@ -9,8 +9,8 @@ function Brandos() {
             <div className='flex flex-wrap gap-y-3'>
                <div className='w-full md:w-[50%] lg:w-[33.33%] px-1.5'>
                     <div className='relative'>
-                        <div className='overflow-hidden'>
-                            <Image className='rounded-lg hover:scale-105 transition-all duration-300' src="/assets/img/homepages-08-banner-01.jpg" alt="brand 1" width={840} height={840} />
+                        <div className='overflow-hidden rounded-2xl'>
+                            <Image className='rounded-2xl hover:scale-105 transition-all duration-300' src="/assets/img/homepages-08-banner-01.jpg" alt="brand 1" width={840} height={840} />
                         </div>
                         <div className='absolute bottom-0 left-0 p-5'>
                             <h2 className='text-2xl font-bold mb-5'>
@@ -22,8 +22,8 @@ function Brandos() {
                </div>
                <div className='w-full md:w-[50%] lg:w-[33.33%] px-1.5'>
                     <div className='relative'>
-                        <div className='overflow-hidden'>
-                            <Image className='rounded-lg hover:scale-105 transition-all duration-300' src="/assets/img/homepages-08-banner-01.jpg" alt="brand 1" width={840} height={840} />
+                        <div className='overflow-hidden rounded-2xl'>
+                            <Image className='rounded-2xl hover:scale-105 transition-all duration-300' src="/assets/img/homepages-08-banner-01.jpg" alt="brand 1" width={840} height={840} />
                         </div>
                         <div className='absolute bottom-0 left-0 p-5'>
                             <h2 className='text-2xl font-bold mb-5'>
@@ -35,8 +35,8 @@ function Brandos() {
                </div>
                <div className='w-full md:w-[50%] lg:w-[33.33%] px-1.5'>
                     <div className='relative'>
-                        <div className='overflow-hidden'>
-                            <Image className='rounded-lg hover:scale-105 transition-all duration-300' src="/assets/img/homepages-08-banner-01.jpg" alt="brand 1" width={840} height={840} />
+                        <div className='overflow-hidden rounded-2xl'>
+                            <Image className='rounded-2xl hover:scale-105 transition-all duration-300' src="/assets/img/homepages-08-banner-01.jpg" alt="brand 1" width={840} height={840} />
                         </div>
                         <div className='absolute bottom-0 left-0 p-5'>
                             <h2 className='text-2xl font-bold mb-5'>

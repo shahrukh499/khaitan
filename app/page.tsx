@@ -13,6 +13,10 @@ import TwinBrandos from './home/TwinBrandos';
 import HotspotsProducts from './home/HotspotsProducts';
 import CollageSection from './home/CollageSection';
 import DrivingKhaitan from './home/DrivingKhaitan';
+import SellingFact from './home/SellingFact';
+import ContactInfo from './home/ContactInfo';
+import ComparitionSection from './home/ComparitionSection';
+import NearestStore from './home/NearestStore';
 
 export default function Home() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -22,6 +26,7 @@ export default function Home() {
       <Banner/>
       <ShowcaseArea />
       <TrustSection />
+      <ComparitionSection />
       <BestSeller />
       <HotspotsProducts />
       <CollageSection/>
@@ -30,6 +35,9 @@ export default function Home() {
       <NewArrivalsProducts />
       <TwinBrandos />
       <DrivingKhaitan/>
+      <SellingFact/>
+      <ContactInfo/>
+      <NearestStore/>
     </>
   );
 }

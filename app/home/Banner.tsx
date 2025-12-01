@@ -27,19 +27,10 @@ function Banner() {
           <SplideSlide>
             <Image
               className="rounded-lg"
-              src="/assets/img/homepages-08-slideshow-01.jpg"
+              src="/assets/img/slideshow-01.jpg"
               alt="Banner 1"
               width={1920}
-              height={1080}
-            />
-          </SplideSlide>
-          <SplideSlide>
-            <Image
-              className="rounded-lg"
-              src="/assets/img/homepages-08-slideshow-02.webp"
-              alt="Banner 2"
-              width={1920}
-              height={1080}
+              height={888}
             />
           </SplideSlide>
         </Splide>

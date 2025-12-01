@@ -7,14 +7,10 @@ function FullSizeSection() {
     <section>
         <div className='container mx-auto px-4'>
             <div className='relative'>
-                <div className='overflow-hidden'>
-                    <Image className='rounded-lg hover:scale-105 transition-all duration-300' src="/assets/img/homepages-08-banner-04.webp" alt="full size section" width={1920} height={1080} />
-                </div>
-                <div className='absolute -translate-y-1/2 top-1/2 right-10 lg:right-32 p-5'>
-                    <h2 className='text-2xl font-bold mb-5'>
-                        Full Size Section
-                    </h2>
-                    <Link href='#' className='text-[14px] font-bold'>Learn More</Link>
+                <div className='overflow-hidden rounded-2xl'>
+                    <Link href='#'>
+                        <Image className='rounded-2xl hover:scale-105 transition-all duration-300' src="/assets/img/homepages-08-banner-04.jpg" alt="full size section" width={1920} height={1080} />
+                    </Link>
                 </div>
             </div>
         </div>

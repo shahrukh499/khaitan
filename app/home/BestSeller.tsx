@@ -23,7 +23,19 @@ function BestSeller() {
                 nesciunt fugiat.
               </p>
               <div>
-                <Button variant="contained" color="primary" sx={{backgroundColor:'#FF3333'}}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    backgroundColor: "#e13032",
+                    color: "white",
+                    borderRadius: 50,
+                    px: 8,
+                    "&:hover": {
+                      backgroundColor: "#e13032",
+                    },
+                  }}
+                >
                   Shop Now
                 </Button>
               </div>
@@ -32,7 +44,7 @@ function BestSeller() {
           <div className="w-full md:w-[70%]">
             <Splide
               options={{
-                type:"loop",
+                type: "loop",
                 perPage: 4,
                 perMove: 1,
                 gap: 10,
@@ -49,24 +61,27 @@ function BestSeller() {
                 dragVelocity: 100,
                 dragAllowMomentum: true,
                 dragMomentum: true,
+                breakpoints:{
+                  640:{
+                    perPage: 2,
+                  }
+                }
               }}
               aria-label="My Favorite Images"
             >
-              {
-                products.map((product) => (
-                  <SplideSlide key={product.id}>
-                    <ProductsCard
-                      id={product.id}
-                      title={product.name}
-                      price={product.price}
-                      image={product.image}
-                      link={product.link}
-                      rating={product.rating}
-                      reviews={product.reviews}
-                    />
-                  </SplideSlide>
-                ))
-              }
+              {products.map((product) => (
+                <SplideSlide key={product.id}>
+                  <ProductsCard
+                    id={product.id}
+                    title={product.name}
+                    price={product.price}
+                    image={product.image}
+                    link={product.link}
+                    rating={product.rating}
+                    reviews={product.reviews}
+                  />
+                </SplideSlide>
+              ))}
             </Splide>
           </div>
         </div>

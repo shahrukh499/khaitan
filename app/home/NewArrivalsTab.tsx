@@ -97,7 +97,7 @@ export default function NewArrivalsTab() {
                   <div className="max-w-[270px] w-full">
                     <Link
                       href="#"
-                      className="text-[14px] font-semibold hover:text-[#FF3333]"
+                      className="text-[14px] font-semibold hover:text-[#e13032]"
                     >
                       Nova A12 Factory Unlocked 4G/LTE Smartphone
                     </Link>
@@ -133,7 +133,7 @@ export default function NewArrivalsTab() {
                   <div className="max-w-[270px] w-full">
                     <Link
                       href="#"
-                      className="text-[14px] font-semibold hover:text-[#FF3333]"
+                      className="text-[14px] font-semibold hover:text-[#e13032]"
                     >
                       Nova A12 Factory Unlocked 4G/LTE Smartphone
                     </Link>
@@ -169,7 +169,7 @@ export default function NewArrivalsTab() {
                   <div className="max-w-[270px] w-full">
                     <Link
                       href="#"
-                      className="text-[14px] font-semibold hover:text-[#FF3333]"
+                      className="text-[14px] font-semibold hover:text-[#e13032]"
                     >
                       Nova A12 Factory Unlocked 4G/LTE Smartphone
                     </Link>

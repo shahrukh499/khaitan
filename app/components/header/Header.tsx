@@ -27,8 +27,8 @@ const StyledBadge = styled(Badge)<BadgeProps>(
       top: 13,
       border: `2px solid ${(theme.vars ?? theme).palette.background.paper}`,
       padding: "0 4px",
-      backgroundColor: "#FF3333",
-      color: "#ffffff",
+      backgroundColor: "#e13032",
+      color: "#FFFFFF",
       fontSize: "12px",
       fontWeight: "bold",
       borderRadius: "50%",
@@ -43,13 +43,13 @@ const StyledBadge = styled(Badge)<BadgeProps>(
 
 function Header() {
   return (
-    <header className="bg-linear-to-r from-[#300a81] via-[#0f3b79] to-[#412283]">
+    <header className="bg-[#e13032]">
       <div className="container mx-auto px-4">
         <div className="py-8">
           <div className="flex items-center">
             <div className="basis-1/5 w-full">
               <Image
-                src="/assets/img/khaitan.gif"
+                src="/assets/img/khaitan.png"
                 alt="logo"
                 width={200}
                 height={100}
@@ -87,7 +87,7 @@ function Header() {
                   width="508.000000pt"
                   height="512.000000pt"
                   viewBox="0 0 508.000000 512.000000"
-                  fill="#FF3333"
+                  fill="#FFFFFF"
                 >
                   <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
                     <path
@@ -138,9 +138,9 @@ function Header() {
                   </g>
                 </svg>
                 <div>
-                  <p className="font-semibold text-[13px] text-white">
+                  <p className="font-semibold text-[13px] text-black">
                     Hotline:{" "}
-                    <Link href="#" className="text-[#FF3333]">
+                    <Link href="#" className="text-[#ffffff]">
                       +32526556445
                     </Link>
                   </p>
