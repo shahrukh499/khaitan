@@ -362,12 +362,13 @@ function HotspotsProducts() {
 
   return (
     <section className="py-8 md:py-12 bg-gray-50">
+      <h2 className="text-[25px] lg:text-[35px] font-semibold text-center mb-8">Experience Khaitan</h2>
       <Box sx={{ width: "100%", maxWidth: "100%" }}>
         <Box 
           sx={{ 
             display: "flex",
             justifyContent: "center",
-            py: 2,
+            pb: 2,
           }}
         >
           <Box

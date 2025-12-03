@@ -6,6 +6,9 @@ function FullSizeSection() {
   return (
     <section>
         <div className='container mx-auto px-4'>
+            <div>
+                <h2 className='text-[25px] lg:text-[35px] font-semibold text-center mb-5'>Driving With Innovation</h2>
+            </div>
             <div className='relative'>
                 <div className='overflow-hidden rounded-2xl'>
                     <Link href='#'>

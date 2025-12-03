@@ -17,6 +17,7 @@ import SellingFact from './home/SellingFact';
 import ContactInfo from './home/ContactInfo';
 import ComparitionSection from './home/ComparitionSection';
 import NearestStore from './home/NearestStore';
+import BlogSection from './home/BlogSection';
 
 export default function Home() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -27,14 +28,15 @@ export default function Home() {
       <ShowcaseArea />
       <TrustSection />
       <ComparitionSection />
-      <BestSeller />
+      {/* <BestSeller /> */}
       <HotspotsProducts />
       <CollageSection/>
       <Brandos />
-      <FullSizeSection/>
-      <NewArrivalsProducts />
-      <TwinBrandos />
+      {/* <FullSizeSection/> */}
+      {/* <NewArrivalsProducts /> */}
+      {/* <TwinBrandos /> */}
       <DrivingKhaitan/>
+      <BlogSection/>
       <SellingFact/>
       <ContactInfo/>
       <NearestStore/>

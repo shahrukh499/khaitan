@@ -6,7 +6,7 @@ function CollageSection() {
     <section className='py-6'>
         <div className='container mx-auto px-4'>
             <div>
-                <h2 className='text-[22px] lg:text-[30px] font-semibold mb-5'>Meet Our Bestsellers</h2>
+                <h2 className='text-[22px] lg:text-[30px] text-center font-semibold mb-5'>Meet Our Bestsellers</h2>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:grid-rows-[1fr_1fr]'>
                 {/* First image - Top left */}

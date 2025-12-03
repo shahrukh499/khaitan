@@ -4,8 +4,13 @@ import React from "react";
 
 function DrivingKhaitan() {
   return (
-    <div className="py-6">
+    <section className="pb-6">
       <div className="container mx-auto px-4">
+        <div>
+          <h2 className="text-[25px] lg:text-[35px] font-semibold text-center mb-5">
+            Driving With Innovation
+          </h2>
+        </div>
         <div className="relative">
           <Image
             className="rounded-2xl"
@@ -56,7 +61,7 @@ function DrivingKhaitan() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
