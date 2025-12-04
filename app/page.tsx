@@ -18,6 +18,8 @@ import ContactInfo from './home/ContactInfo';
 import ComparitionSection from './home/ComparitionSection';
 import NearestStore from './home/NearestStore';
 import BlogSection from './home/BlogSection';
+import BestsellerSlider from './home/BestsellerSlider';
+import HotPicks from './home/HotPicks';
 
 export default function Home() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -25,13 +27,15 @@ export default function Home() {
   return (
     <>
       <Banner/>
-      <ShowcaseArea />
-      <TrustSection />
+      {/* <ShowcaseArea />
+      <TrustSection /> */}
       <ComparitionSection />
       {/* <BestSeller /> */}
       <HotspotsProducts />
-      <CollageSection/>
-      <Brandos />
+      <BestsellerSlider />
+      <HotPicks />
+      {/* <CollageSection/> */}
+      {/* <Brandos /> */}
       {/* <FullSizeSection/> */}
       {/* <NewArrivalsProducts /> */}
       {/* <TwinBrandos /> */}

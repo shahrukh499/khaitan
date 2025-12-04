@@ -7,7 +7,7 @@ function Banner() {
   
   return (
     <section className="relative py-3">
-      <div className="container mx-auto px-4">
+      <div className="">
         <Splide
           options={{
             type: "fade",
@@ -26,7 +26,7 @@ function Banner() {
         >
           <SplideSlide>
             <Image
-              className="rounded-lg"
+              className=""
               src="/assets/img/slideshow-01.jpg"
               alt="Banner 1"
               width={1920}

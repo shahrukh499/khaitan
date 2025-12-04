@@ -1,9 +1,9 @@
 export const productsData = [
     {
         id: ' KMHR7GP',
-        name: "BRIO Mixer Grinder",
-        price: 100,
-        image: "/assets/img/products/Brio-mixer-grinder.webp",
+        name: "9W Immensa Smart Bulb with Music Mode (E27 Base)",
+        price: 990.00,
+        image: "/assets/img/products/bulb.webp",
         link: "/products/brio-mixer-grinder",
         rating: 4.5,
         reviews: 100,

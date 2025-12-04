@@ -16,7 +16,7 @@ interface ProductsCardProps {
 function ProductsCard(props: ProductsCardProps) {
   const { id, title, price, image, link, rating, reviews } = props;
   return (
-    <div className='p-2 shadow group transition-all duration-300'>
+    <div className='p-2 shadow group transition-all duration-300 my-2 rounded-2xl bg-[url("/assets/img/card-bg.webp")] bg-cover bg-center'>
         <div className='overflow-hidden'>
             <Link href='#'>
                 <Image 
@@ -36,7 +36,7 @@ function ProductsCard(props: ProductsCardProps) {
             <span className='text-[12px] text-gray-500'>{reviews} reviews</span>
         </div>
         <div>
-            <span className='text-[14px] font-semibold'>{price}</span>
+            <span className='text-[14px] font-semibold'>MRP: ₹{price}</span>
         </div>
     </div>
   )

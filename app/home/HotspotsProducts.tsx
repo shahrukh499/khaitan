@@ -93,21 +93,131 @@ function HotspotMarker({ hotspot, onMouseEnter, onMouseLeave }: HotspotMarkerPro
 interface ProductHoverCardProps {
   hotspot: Hotspot | null;
   position: { x: number; y: number } | null;
+  containerRef: React.RefObject<HTMLDivElement | null>;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
 }
 
-function ProductHoverCard({ hotspot, position, onMouseEnter, onMouseLeave }: ProductHoverCardProps) {
+function ProductHoverCard({ hotspot, position, containerRef, onMouseEnter, onMouseLeave }: ProductHoverCardProps) {
+  const cardRef = React.useRef<HTMLDivElement>(null);
+  const [cardStyle, setCardStyle] = React.useState<React.CSSProperties>({});
+
+  const calculatePosition = React.useCallback(() => {
+    if (!hotspot || !position || !containerRef.current) {
+      return;
+    }
+
+    const container = containerRef.current;
+    const containerRect = container.getBoundingClientRect();
+    
+    // Estimated card dimensions (will be adjusted after measurement)
+    const estimatedCardWidth = 200;
+    const estimatedCardHeight = 300;
+    
+    // Available space calculations relative to container
+    const spaceRight = containerRect.width - position.x;
+    const spaceLeft = position.x;
+    const spaceBottom = containerRect.height - position.y;
+    const spaceTop = position.y;
+    
+    // Determine horizontal positioning
+    let transformX: string;
+    
+    if (spaceRight >= estimatedCardWidth + 10) {
+      // Enough space on right, position to the right
+      transformX = "0%";
+    } else if (spaceLeft >= estimatedCardWidth + 10) {
+      // Not enough space on right, but enough on left, position to the left
+      transformX = "-100%";
+    } else {
+      // Not enough space on either side, center it
+      transformX = "-50%";
+    }
+    
+    // Determine vertical positioning
+    let transformY: string;
+    
+    if (spaceBottom >= estimatedCardHeight + 10) {
+      // Enough space below, position below
+      transformY = "0%";
+    } else if (spaceTop >= estimatedCardHeight + 10) {
+      // Not enough space below, but enough above, position above
+      transformY = "-100%";
+    } else {
+      // Not enough space on either side, center it vertically
+      transformY = "-50%";
+    }
+    
+    setCardStyle({
+      left: `${position.x}px`,
+      top: `${position.y}px`,
+      transform: `translate(${transformX}, ${transformY})`,
+    });
+  }, [hotspot, position, containerRef]);
+
+  // Calculate position when hotspot or position changes
+  React.useEffect(() => {
+    calculatePosition();
+  }, [calculatePosition]);
+
+  // Recalculate after card is rendered to get actual dimensions
+  React.useLayoutEffect(() => {
+    if (!hotspot || !position || !cardRef.current || !containerRef.current) {
+      return;
+    }
+
+    const card = cardRef.current;
+    const container = containerRef.current;
+    
+    // Get actual card dimensions
+    const cardRect = card.getBoundingClientRect();
+    const containerRect = container.getBoundingClientRect();
+    
+    const cardWidth = cardRect.width;
+    const cardHeight = cardRect.height;
+    
+    // Available space calculations
+    const spaceRight = containerRect.width - position.x;
+    const spaceLeft = position.x;
+    const spaceBottom = containerRect.height - position.y;
+    const spaceTop = position.y;
+    
+    // Determine horizontal positioning with actual dimensions
+    let transformX: string;
+    
+    if (spaceRight >= cardWidth + 10) {
+      transformX = "0%";
+    } else if (spaceLeft >= cardWidth + 10) {
+      transformX = "-100%";
+    } else {
+      transformX = "-50%";
+    }
+    
+    // Determine vertical positioning with actual dimensions
+    let transformY: string;
+    
+    if (spaceBottom >= cardHeight + 10) {
+      transformY = "0%";
+    } else if (spaceTop >= cardHeight + 10) {
+      transformY = "-100%";
+    } else {
+      transformY = "-50%";
+    }
+    
+    setCardStyle({
+      left: `${position.x}px`,
+      top: `${position.y}px`,
+      transform: `translate(${transformX}, ${transformY})`,
+    });
+  }, [hotspot, position, containerRef]);
+
   if (!hotspot || !position) return null;
 
   return (
     <Card
-      className="absolute z-50 min-w-[240px] max-w-[280px] shadow-2xl transition-all duration-200"
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        transform: "translate(0%, -50%)",
-      }}
+      ref={cardRef}
+      className="absolute z-50 min-w-[180px] max-w-[200px] shadow-2xl transition-all duration-200"
+      style={cardStyle}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       sx={{
@@ -135,7 +245,7 @@ function ProductHoverCard({ hotspot, position, onMouseEnter, onMouseLeave }: Pro
           component="div"
           sx={{
             fontWeight: 600,
-            fontSize: "0.875rem",
+            fontSize: "0.825rem",
             mb: 1,
             lineHeight: 1.4,
             color: "#1f2937",
@@ -361,7 +471,7 @@ function HotspotsProducts() {
   }, []);
 
   return (
-    <section className="py-8 md:py-12 bg-gray-50">
+    <section className="py-8 md:py-12">
       <h2 className="text-[25px] lg:text-[35px] font-semibold text-center mb-8">Experience Khaitan</h2>
       <Box sx={{ width: "100%", maxWidth: "100%" }}>
         <Box 
@@ -374,7 +484,8 @@ function HotspotsProducts() {
           <Box
             sx={{
               display: "inline-flex",
-              backgroundColor: "#f3f4f6",
+              backgroundColor: "#FFFFFF",
+              boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.1)",
               borderRadius: 50,
               p: 0.5,
             }}
@@ -406,7 +517,7 @@ function HotspotsProducts() {
                     px: { xs: 2, sm: 3 },
                     borderRadius: 50,
                     color: "#6b7280",
-                    fontWeight: 600,
+                    fontWeight: 400,
                     transition: "all 0.2s ease-in-out",
                     "&.Mui-selected": {
                       color: "#ffffff",
@@ -472,6 +583,7 @@ function HotspotsProducts() {
               <ProductHoverCard 
                 hotspot={hoveredHotspot} 
                 position={cardPosition}
+                containerRef={containerRef}
                 onMouseEnter={handleCardEnter}
                 onMouseLeave={handleCardLeave}
               />
